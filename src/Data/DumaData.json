@@ -7,75 +7,25 @@
             "staffMembers" : [
                 {
                     "name": "Azande",
-                    "imageOri":  "TheOg.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Azande.jpg"
+
                 },
                 {
                     "name": "Vusi",
-                    "imageOri":  "Charlie.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Vusi.jpg"
                 },
                 {
                     "name": "Siya",
-                    "imageOri":  "ThePlug.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Siya",
-                    "imageOri":  "ThePlug.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Siya.jpg"
                 },
                 {
                     "name": "Tumi",
-                    "imageOri":  "ThePrMavern.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Tumi.jpg"
                 },
                 {
                     "name": "Petunia",
-                    "imageOri":  "Wordsmith.jpg",
-                    "imageHover": "2.jpg"
-                }
-            ]
-        },
-        {
-            "department" : "Culture and Partnerships",
-            "aka" : "The Blesser",
-            "quote" : "Whatever you need we make it happen",
-            "staffMembers": [
-                {
-                    "name": "Raquel",
-                    "imageOri":  "Momager.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Ntokozo",
-                    "imageOri":  "TheQuarterback.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Lee-Ann",
-                    "imageOri":  "Superstar.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Oarabile",
-                    "imageOri":  "CreativeEngineer.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Sphe",
-                    "imageOri":  "TheInfluenza.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Sabelo",
-                    "imageOri":  "ThePlaymaker.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Nelson",
-                    "imageOri":  "TheHacker.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Petunia.jpg"
+    
                 }
             ]
         },
@@ -86,18 +36,15 @@
             "staffMembers": [
                 {
                     "name": "Akhona",
-                    "imageOri":  "1.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Akhona.jpg"
                 },
                 {
                     "name": "Osego",
-                    "imageOri":  "1.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Osego.jpg"
                 },
                 {
                     "name": "Banele",
-                    "imageOri":  "1.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Banele.jpg"
                 }
             ]
         },
@@ -108,52 +55,104 @@
             "staffMembers": [
                 {
                     "name": "Keke",
-                    "imageOri":  "TheMerch.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Keke.jpg"
                 },
                 {
                     "name": "Chezlyn",
-                    "imageOri":  "TheMage.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Chezlyn.jpg"
+    
                 },
                 {
                     "name": "Emil",
-                    "imageOri":  "Father.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Emil.jpg"
                 },
                 {
                     "name": "Anele",
-                    "imageOri":  "TheUxHalfManHalfMachine.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Anele.jpg"
                 },
                 {
                     "name": "Koketso2",
-                    "imageOri":  "NewKidOnTheBlock.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Koketso-2.jpg"
+            
                 },
                 {
                     "name": "Thube",
-                    "imageOri":  "TheConceptulizer.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Thube.jpg"
                 },
                 {
                     "name": "Lerato",
-                    "imageOri":  "JMPD.jpg",
-                    "imageHover": "2.jpg"
+                    "image":  "Lerato.jpg"
+                }
+            ]
+        },
+        {
+            "department": "Social",
+            "aka": "The Party",
+            "quote": "Our Head of Social Media is you as a client",
+            "staffMembers":[
+                {
+                    "name": "Ayanda",
+                    "image": "Ayanda.jpg."
+
+                },
+                {
+                    "name": "Boitumelo",
+                    "image":  "Boitumelo.jpg"
+                },
+                {
+                    "name": "Nolly",
+                    "image":  "Nolly.jpg"
+                },
+                {
+                    "name": "Koketso1",
+                    "image":  "Koketso-1.jpg"
+                },
+                {
+                    "name": "Huli",
+                    "image":  "Huli.jpg"
+                },
+                {
+                    "name": "Mojabeng",
+                    "image":  "Mojabeng.jpg"
+                },
+                {
+                    "name": "Nosipho",
+                    "image":  "Nosipho.jpg"
+                },
+                {
+                    "name": "Kele",
+                    "image":  "Kele.jpg"
+                }
+            ]
+            
+        },
+        {
+            "department": "Production",
+            "aka": "The Final Cut",
+            "quote": "With us mood boards equal reality",
+            "staffMembers": [
+                {
+                    "name": ,
+                    "image": 
+                },
+                {
+                    "name": ,
+                    "image": 
                 }
             ]
         }
     ],
-    "clients":[
-        {
-            "clientName" : "Coca Cola",
-            "clientLogo" : "coca_cola.jpg"
-        },
-        {
-            "clientName" : "Multichoice",
-            "clientLogo" : "multi_choice.jpg"
-        }
-    ],
+"clients":[
+    {
+        "clientName" : "Coca Cola",
+        "clientLogo" : "coca_cola.jpg"
+    },
+    {
+        "clientName" : "Multichoice",
+        "clientLogo" : "multi_choice.jpg"
+    }
+],
+
     "NewsRoom": [
         {
             "title" : "Sibu wins big",
@@ -163,137 +162,3 @@
         }
     ]
 }
-"Staff": [
-    {
-        "Department": [
-            {
-            "name" : "Social",
-            "aka" : "The Party",
-            "quote" : "Our Head of Social Media is you as a client",
-            "staff": [
-                {
-                    "name": "Ayanda",
-                    "imageOri":  "Mistress.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Boitumelo",
-                    "imageOri":  "TheRealMVP.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Nolly",
-                    "imageOri":  "WonderWoman.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Koketso1",
-                    "imageOri":  "MFundiSi.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Huli",
-                    "imageOri":  "TheRookie.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Mojabeng",
-                    "imageOri":  "AllStar.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Nosipho",
-                    "imageOri":  "HeadGirl.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Kele",
-                    "imageOri":  "GOAT.jpg",
-                    "imageHover": "2.jpg"
-                },
-            ]}
-    ]
-    }
-]
-"Staff": [
-    {
-        "Department": [
-            {
-            "name" : "Production",
-            "aka" : "The Final Cut",
-            "quote" : "With us mood boards equal reality",
-            "staff": [
-                {
-                    "name": "Tash",
-                    "imageOri":  "ThePlanner.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Kashifa",
-                    "imageOri":  "TheKreative.jpg",
-                    "imageHover": "2.jpg"
-                },
-            ]}
-    ]
-    }
-]
-"Clients": [
-    {
-        "Department": [
-            {
-            "name" : "Client Logos",
-            "client": [
-                {
-                    "name": "CocaCola",
-                    "image":  "Coca-Cola.svg",
-                },
-                {
-                    "name": "DStv",
-                    "image":  "DStv.svg",
-                },
-            ]}
-    ]
-    }
-]
-
-
-
-
-{
-    "staff": [
-        {
-            "department": "Public Relations", 
-            "aka" : "The Mavericks",
-            "quote" : "Work is love made visible",
-            "staffMembers" : [
-                {
-                    "name": "Azande",
-                    "imageOri":  "TheOg.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Vusi",
-                    "imageOri":  "Charlie.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Siya",
-                    "imageOri":  "ThePlug.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Tumi",
-                    "imageOri":  "ThePrMavern.jpg",
-                    "imageHover": "2.jpg"
-                },
-                {
-                    "name": "Petunia",
-                    "imageOri":  "Wordsmith.jpg",
-                    "imageHover": "2.jpg"
-                }
-            ]
-        },
-
-
-
-

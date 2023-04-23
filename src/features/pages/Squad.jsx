@@ -5,6 +5,9 @@ import SquadImage2 from '../../assets/squad/SquadOri/Sabelo.jpg'
 import SquadImageHover from '../../assets/squad/SquadHover/Akhona.jpg'
 import SquadImageHover2 from '../../assets/squad/SquadHover/Sabelo.jpg'
 
+// actions
+import useFetch from '../../actions/useFetchData'
+
 const Squad = () => {
   const headingStyle = {
     fontSize:"7xl", 
@@ -41,6 +44,9 @@ const Squad = () => {
     pt: "0.25rem"
 
   }
+
+  const { data:squadData, error, isPending} = useFetch(' http://localhost:8000/staff');
+  console.log(squadData)
 
   return (
     <Box>

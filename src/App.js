@@ -1,6 +1,6 @@
 
 import './App.css';
-import Navbar from './components/Navbar';
+import Nav from './components/Nav';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CustomCursor from './components/CustomCursor';
@@ -20,7 +20,7 @@ import Footer from './components/Footer';
 function App() {
   return (
       <Router>
-        <Navbar />
+        <Nav />
         <CustomCursor />
         <Routes>
           <Route path="/"element = {<Home/>}/>

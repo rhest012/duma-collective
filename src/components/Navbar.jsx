@@ -25,6 +25,7 @@ const Navbar = () => {
           <Logo src={LogoImage}></Logo>
         </LeftContainer>
         <RightContainer>
+          <NavbarLink> Home</NavbarLink>
           <MobileMenuButton onClick={() => {
             setNavBarOpener((curr) => !curr);
           }}

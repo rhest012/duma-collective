@@ -3,11 +3,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 // actions
-import useFetch from '../../actions/useFetchData'
 import { useFetchFirebase } from '../../actions/useFetchFirebase'
-import SquadHeader from '../components/SquadHeader'
-import { Links } from '../../styles/Navbar.style'
-import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import PageIntro from '../theGrind/components/pageIntro'
 import SecondaryHeader from '../components/SecondaryHeader'
@@ -128,7 +124,7 @@ const Squad = () => {
                             <motionFlex gap="2rem">
                               <Image
                                 borderRadius="1rem"
-                                src={require(`../../assets/squad/squadOri/${staffMember.image}`)}
+                                src={require(`../../assets/squad/squadOriginal/${staffMember.image}`)}
                                 w="239px"
                                 h="181px"
                                 transition="all  0.7s ease"

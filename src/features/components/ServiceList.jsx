@@ -14,7 +14,7 @@ import {
     createMultiStyleConfigHelpers 
   } from '@chakra-ui/react'
 import { accordionAnatomy } from '@chakra-ui/anatomy'
-import placeHolderImage from '../../assets/squad/squadOri/Akhona.jpg'
+import placeHolderImage from '../../assets/squad/squadOriginal/Akhona.jpg'
 import useFetch from '../../actions/useFetchData'
 import { useFetchFirebase } from '../../actions/useFetchFirebase'
 import { color } from 'framer-motion'

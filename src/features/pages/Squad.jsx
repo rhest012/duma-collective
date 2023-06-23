@@ -124,7 +124,7 @@ const Squad = () => {
                             <motionFlex gap="2rem">
                               <Image
                                 borderRadius="1rem"
-                                src={require(`../../assets/squad/squadOriginal/${staffMember.image}`)}
+                                src={require(`../../assets/squad/squadOri/${staffMember.image}`)}
                                 w="239px"
                                 h="181px"
                                 transition="all  0.7s ease"

@@ -33,7 +33,7 @@ const theme = extendTheme ({
             fontSize: "2.44rem",
             letterSpacing: "1.5px",
             textTransform: "uppercase",
-            color: "#1E174B"
+       
           },
           h4: {
             fontWeight: 600,

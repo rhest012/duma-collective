@@ -4,7 +4,6 @@ import { CiTwitter } from 'react-icons/ci'
 import { SlSocialFacebook } from 'react-icons/sl'
 import React from 'react'
 import JffBackground from '../../../assets/theGrind/jff/jff-background.png'
-import '../../../index.css';
 import JffInstaCard from '../components/JffInstaCard'
 import JFFSwiper from '../components/JFFSwiper'
 import JffHeader from '../../../assets/theGrind/jff/JFF_Header.png'

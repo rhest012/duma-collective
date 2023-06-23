@@ -1,26 +1,32 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading, Text } from '@chakra-ui/react'
 import HomeHeaderBackground from '../../assets/headers/home-header.jpg'
 
 const HomeHeader = () => {
   return (
     <Flex 
-      height="90vh" 
-      width="100wh" 
-      backgroundImage={HomeHeaderBackground}
-      backgroundSize="cover"
-      flexDir="column"
-      padding="2rem"
-      gap="4rem"
-      flexWrap="wrap"
-      justifyContent="center"
+    height="90vh" 
+    width="100wh" 
+    flexDir="column"
+    paddingY="2rem"
+    paddingX="4rem"
+    flexWrap="wrap"
+    justifyContent="flex-end"
+    borderBottom="1px solid #1a202c"
     >
         <Heading 
-            variant="h1"
-            color="#fff"
-            width="40%"
+          variant="h1"
+          width="70%"
+          marginBottom="3rem"
         >
-            Looking for a 360 Campaign? <br/>Let's Talk.
+            Redefining creative communications from Africa to the world 
         </Heading>
+        <Text
+          textAlign="right"
+          paddingLeft="60%"
+          variant="p"
+        >
+         Duma Collective in action from branding, and creative strategy to PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
+        </Text>
     </Flex>
   )
 }

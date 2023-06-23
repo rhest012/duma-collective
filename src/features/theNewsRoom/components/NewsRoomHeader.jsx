@@ -1,36 +1,33 @@
-import { Flex, Heading } from '@chakra-ui/react'
-import React from 'react'
-import NewsroomHeaderBackground from '../../../assets/headers/newsroom-header.jpg'
+import { Flex, Heading, Text } from '@chakra-ui/react'
 
-const NewsRoomHeader = () => {
+const GrindHeader = () => {
   return (
     <Flex 
-        height="90vh" 
-        width="100wh" 
-        backgroundImage={NewsroomHeaderBackground}
-        backgroundSize="cover"
-        flexDir="column"
-        padding="2rem"
-        gap="4rem"
-        flexWrap="wrap"
-        justifyContent="flex-end"
-      >
-          <Heading 
-            variant="h1"
-            color="#fff"
-            width="40%"
+      height="40vh" 
+      width="100wh" 
+      flexDir="column"
+      paddingY="2rem"
+      paddingX="4rem"
+      flexWrap="wrap"
+      justifyContent="flex-end"
+      borderBottom="1px solid #1a202c"
+    >
+        <Heading 
+          variant="h1"
+          width="60%"
+          marginBottom="3rem"
         >
-            Our Expertise and Creative Approach
+          Newsroom
         </Heading>
-        <Heading
-            width="40%"
-            variant="h6"
-            color="#fff"
+        <Text
+          textAlign="right"
+          paddingLeft="60%"
+          variant="p"
         >
-            Duma Collective in action from branding, and creative strategy to PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
-        </Heading>
-      </Flex>
+         Duma Collective in action from branding, and creative strategy to PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
+        </Text>
+    </Flex>
   )
 }
 
-export default NewsRoomHeader
+export default GrindHeader

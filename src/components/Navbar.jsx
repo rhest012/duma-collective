@@ -25,17 +25,11 @@ const Navbar = () => {
           <Logo src={LogoImage}></Logo>
         </LeftContainer>
         <RightContainer>
-          <NavbarLink to="/">Home</NavbarLink>
-          <NavbarLink to="/what-we-do">What We Do</NavbarLink>
-          <NavbarLink to="/the-grind">The Grind</NavbarLink>
-          <NavbarLink to="/squad">The Squad</NavbarLink>
-          <NavbarLink to="/newsroom">Newsroom</NavbarLink>
-          <NavbarLink to="/contact">Contact</NavbarLink>
           <MobileMenuButton onClick={() => {
             setNavBarOpener((curr) => !curr);
           }}
             >
-              {navBarOpener ? <> &#10005; </> : <> &#8801; </>}
+              {navBarOpener ? <> &#10005; </> : <> Menu </>}
           </MobileMenuButton>
         </RightContainer>
       </NavbarInnerContainer>

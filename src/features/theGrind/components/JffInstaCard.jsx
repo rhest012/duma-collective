@@ -5,7 +5,6 @@ import React from 'react'
 import JffBackground from '../../../assets/theGrind/jff/jff-background.png'
 import { FaUsers, FaUser, FaHandshake } from 'react-icons/fa'
 import {ImStatsBars2} from 'react-icons/im'
-import '../../../index.css';
 
 const JffInstaCard = () => {
     const socialContainer = {

@@ -4,30 +4,29 @@ import HeaderBackground from '../../../assets/headers/grind-header.jpg'
 const GrindHeader = () => {
   return (
     <Flex 
-      height="90vh" 
+      height="40vh" 
       width="100wh" 
-      backgroundImage={HeaderBackground}
-      backgroundSize="cover"
       flexDir="column"
-      padding="2rem"
-      gap="4rem"
+      paddingY="2rem"
+      paddingX="4rem"
       flexWrap="wrap"
       justifyContent="flex-end"
+      borderBottom="1px solid #1a202c"
     >
         <Heading 
-            variant="h1"
-            color="#fff"
-            width="40%"
+          variant="h1"
+          width="60%"
+          marginBottom="3rem"
         >
-            Our Expertise and Creative Approach
+          The Grind
         </Heading>
-        <Heading
-            width="40%"
-            variant="h6"
-            color="#fff"
+        <Text
+          textAlign="right"
+          paddingLeft="60%"
+          variant="p"
         >
-            Duma Collective in action from branding, and creative strategy to PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
-        </Heading>
+         Duma Collective in action from branding, and creative strategy to PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
+        </Text>
     </Flex>
   )
 }

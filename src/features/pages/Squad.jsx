@@ -1,16 +1,20 @@
-import { Box, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
-import SquadImage from '../../assets/squad/SquadOri/Akhona.jpg'
-import SquadImage2 from '../../assets/squad/SquadOri/Sabelo.jpg'
-import SquadImageHover from '../../assets/squad/SquadHover/Akhona.jpg'
-import SquadImageHover2 from '../../assets/squad/SquadHover/Sabelo.jpg'
+import { Box, Button, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 // actions
 import useFetch from '../../actions/useFetchData'
+import { useFetchFirebase } from '../../actions/useFetchFirebase'
+import SquadHeader from '../components/SquadHeader'
+import { Links } from '../../styles/Navbar.style'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import PageIntro from '../theGrind/components/pageIntro'
+import SecondaryHeader from '../components/SecondaryHeader'
 
 const Squad = () => {
   const headingStyle = {
-    fontSize:"7xl", 
+    fontSize:"6xl", 
     color:"brand.900", 
     textTransform:"uppercase", 
     fontStyle:"700",
@@ -20,11 +24,8 @@ const Squad = () => {
   }
 
   const subHeadingStyle = {
-    fontfamily: "'Fira Sans', sans-serif",
-    weight: "500",
-    fontSize: "2xl",
     color:"brand.900", 
-    textAlign: "left"
+    textAlign: "left",
   }
 
   const preHeadingStyle = {
@@ -39,226 +40,138 @@ const Squad = () => {
     pb: "10"
   }
 
-  const imageCaption = {
-    textAlign : "center",
-    pt: "0.25rem"
+  const buttonStyle = {
+    color:"#fff",
+    background:"transparent",
+    color: "brand.900",
+    paddingY:"1.25rem",
+    textTransform:"uppercase",
+    fontSize: "1rem",
+    fontfamily: "'Roc Grotesk Wide', sans-serif",
+    fontWeight: "600",
+
+    _hover: {
+      background:"#transparent",
+    }
 
   }
 
-  const { data:squadData, error, isPending} = useFetch(' http://localhost:8000/staff');
-  console.log(squadData)
+  const imageCaption = {
+    textAlign : "center",
+    pt: "0.25rem",
+    pb: "0.5rem"
+  }
+
+  // Page Location
+  const location = useLocation();
+  const pageLocation = location.pathname;
+
+  // Framer Motion
+  const MotionFlex = motion(Flex);
+  const MotionText = motion(Text);
+  const MotionImage = motion(Image);
+  const MotionBox = motion(Box);
+
+  const hoverVariants = {
+      visible: {
+        opacity: 0,
+        transition: {duration: 1}
+      },
+      hover: {
+        opacity: 1,
+        transition: {duration: 1}
+      } 
+    }
+  
+  // Fetch Data
+  const data  = useFetchFirebase('staff');
+  
+  // Filter squad departments
+  const [currentDepartment, setCurrentDepartment] = useState("Public Relations");
+
+  const handleDepartmentChange = (department) => {
+    setCurrentDepartment(department);
+  };
+
+  const filteredSquad = currentDepartment === "all"
+  ? data
+  : data.filter(item => item.department === currentDepartment);
+
 
   return (
-    <Box>
-        <Grid gridTemplateColumns="60% 40%" marginX="3rem" height="95vh" alignItems="center">
-            <GridItem>
-              <Stack gap={5}>
-              <Flex justifyContent="center" alignItems="center" gap={5}>
-               <Box>
-                <Box
-                    bg={`url(${SquadImage})`}
-                    w="239px"
-                    h="181px"
-                    bgSize="cover"
-                    bgPosition="center"
-                    boxShadow="none"
-                    transition="all  0.7s ease"
-                    _hover={{
-                      bg: `url(${SquadImageHover})`,
-                      w:"239px",
-                      h:"181px",
-                      boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-                      bgSize:"cover",
-                      bgPosition:"center"
-                    }}
-                  />
-                  <Text sx={imageCaption}>
-                    The Influenza
+   <>
+    {data && (
+      <Box>
+        <SecondaryHeader pageLocation={pageLocation}/>
+        <PageIntro pageLocation={pageLocation}/>
+        <Box height="100vh" paddingY="4rem" marginX="2rem">
+          <Box borderTop="1px solid #1E174B"/>
+          <Flex justifyContent="space-between" paddingY="1rem" alignItems="center">
+          {data.map((staff, index) => (
+            <Button key={index}  sx={buttonStyle} onClick={() => handleDepartmentChange(`${staff.department}`)}>
+              {staff.department}
+            </Button>
+          ))}
+          </Flex>
+          <Box borderTop="1px solid #1E174B"/>
+          {filteredSquad.map((staff, index) => (
+            <Grid key={index}  marginY="2rem" height="100%" alignContent="center" gridTemplateColumns="60% 40%">
+              <GridItem>
+                <Grid key={index} gridTemplateColumns="repeat(3, 1fr)">
+                    {staff.staffMembers.map((staffMember, index) => {
+                      return (
+                        <GridItem key={index}>
+                          <MotionFlex 
+                            flexDirection="column"
+                            className="staff-container"
+                          >
+                            <motionFlex gap="2rem">
+                              <Image
+                                borderRadius="1rem"
+                                src={require(`../../assets/squad/squadOri/${staffMember.image}`)}
+                                w="239px"
+                                h="181px"
+                                transition="all  0.7s ease"
+                                _hover={{
+                                  content: `url(${require(`../../assets/squad/squadHover/${staffMember.image}`)})`,
+                                  w:"239px",
+                                  h:"181px",
+                                }}
+                              />
+                            </motionFlex>
+                            <MotionText 
+                              className="aka-text"
+                              sx={imageCaption}
+                              // variants={hoverVariants}
+                              // animate="visible"
+                              // whileHover="hover"
+                            >
+                              {staffMember.aka}
+                            </MotionText>
+                          </MotionFlex>
+                        </GridItem>
+                    )})}  
+                </Grid>
+              </GridItem>
+              <GridItem >
+                <Flex flexDir="column" justifyContent="center" height="100%" paddingLeft="1.5rem" lineHeight="50px">
+                  <Text fontSize="1.56rem"  >
+                    {staff.quote}
                   </Text>
-               </Box>
-               <Box>
-               <Box
-                  bg={`url(${SquadImage2})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.7s"
-                  _hover={{
-                    bg: `url(${SquadImageHover2})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                />
-                  <Text sx={imageCaption}>
-                    The Influenza
+                  <Heading sx={headingStyle}>
+                      {staff.aka}
+                  </Heading>
+                  <Text sx={subHeadingStyle}>
+                    {staff.department}
                   </Text>
-               </Box>
-               <Box>
-               <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-              </Flex>
-               <Flex justifyContent="center" alignItems="center" gap={5}>
-               <Box>
-                <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-               <Box>
-                <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                  />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-               <Box>
-                <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                  />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-              </Flex>
-               <Flex justifyContent="center" alignItems="center" gap={5}>
-               <Box>
-                <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-               <Box>
-               <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                  />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-               <Box>
-                <Box
-                  bg={`url(${SquadImage})`}
-                  w="239px"
-                  h="181px"
-                  bgSize="cover"
-                  bgPosition="center"
-                  transition="all  0.65s ease"
-                  _hover={{
-                    bg: `url(${SquadImageHover})`,
-                    w:"239px",
-                    h:"181px",
-                    bgSize:"cover",
-                    bgPosition:"center"
-                  }}
-                  />
-                  <Text sx={imageCaption}>
-                    The Influenza
-                  </Text>
-               </Box>
-              </Flex>
-              </Stack>
-            </GridItem>
-            <GridItem >
-              <Flex flexDir="column" justifyContent="center"  paddingLeft="1.5rem">
-                <Text sx={preHeadingStyle}>
-                  Whatever you need, <br /> we make it happen
-                </Text>
-                <Heading sx={headingStyle}>
-                    The Blessers
-                </Heading>
-                <Text sx={subHeadingStyle}>
-                - Culture and Partnerships -
-                </Text>
-              </Flex>
-            </GridItem>
-        </Grid>
-        
+                </Flex>
+              </GridItem>
+            </Grid>
+          ))}
         </Box>
+      </Box>
+    )}
+   </>
   )
 }
 

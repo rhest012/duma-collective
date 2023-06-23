@@ -7,7 +7,7 @@
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    border: 1px dotted #1E174B;;
+    border: 1px dotted #fff;;
     pointer-events: none; 
     transform: translate3d(0, 0, 0);
     position: fixed;

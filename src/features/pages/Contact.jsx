@@ -1,10 +1,11 @@
 import { Flex, Grid, GridItem, Heading, Input, Select, Stack, Text, Textarea } from '@chakra-ui/react'
-import WhatWeDoHeaderBg from '../../assets/headers/What-We-Do-header.jpg'
+import SecondaryHeader from '../components/SecondaryHeader'
 import {SlLocationPin} from 'react-icons/sl'
 import {BsEnvelopeAt, BsTelephone} from 'react-icons/bs'
 import {AiOutlineTwitter, AiOutlineInstagram} from 'react-icons/ai'
 import {FaFacebookF} from 'react-icons/fa'
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 const Contact = () => {
     const inputStyling= {
@@ -17,87 +18,64 @@ const Contact = () => {
             fontSize:"0.85rem"
         }
     }
+
+        // Page Location
+    const location = useLocation();
+    const pageLocation = location.pathname;
+
   return (
     <>
-        <Flex 
-        height="90vh" 
-        width="100wh" 
-        backgroundImage={WhatWeDoHeaderBg}
-        backgroundSize="cover"
-        flexDir="column"
-        padding="2rem"
-        gap="6rem"
-        flexWrap="wrap"
-        alignContent="flex-end"
-        justifyContent="flex-end"
-      >
-          <Heading 
-            variant="h1"
-            color="brand.900"
-            width="40%"
-            textAlign="right"
+        <SecondaryHeader pageLocation={pageLocation}/>
+        <Grid
+            marginY="4rem"
+            marginX="10rem"
+            gridTemplateColumns="70% 30%"
         >
-            Get In Touch with Duma Collective
-        </Heading>
-        <Heading
-            width="40%"
-            variant="h6"
-            color="brand.900"
-            textAlign="right"
-        >
-            We bring campaigns to life through branding and creative strategy, PR, Social Media, Influencer Marketing, Events, Production, and Talent Procurement.
-        </Heading>
-      </Flex>
-      <Grid
-        marginY="4rem"
-        marginX="10rem"
-        gridTemplateColumns="70% 30%"
-      >
-        <GridItem
-            borderRadius="1rem"
-            border="1px solid #1E174B"
-            padding="2rem"
-            height="500px"
-            zIndex="1"
-        >
-            <Flex height="100%" flexDirection="column" flexWrap="wrap" justifyContent="center">
-                <Heading 
-                    variant="h3" 
-                    as="h3"
-                    color="brand.900"
-                    paddingBottom="1rem"
-                >
-                    Send Us a Message
-                </Heading>
-                <form>
-                    <Flex gap="1rem" width="65%">
-                        <Input
-                            placeholder="Full Name"
-                            type="text"
-                            sx={inputStyling}
-                        />
-                        <Input
-                            placeholder="Email"
-                            type="email"
-                            sx={inputStyling}
-                        />
-                    </Flex>
-                    <Select
-                        sx={inputStyling}
-                        placeholder="Subject"
-                        width="65%"
+            <GridItem
+                borderRadius="1rem"
+                border="1px solid #1E174B"
+                padding="2rem"
+                height="500px"
+                zIndex="1"
+            >
+                <Flex height="100%" flexDirection="column" flexWrap="wrap" justifyContent="center">
+                    <Heading 
+                        variant="h3" 
+                        as="h3"
+                        color="brand.900"
+                        paddingBottom="1rem"
                     >
-                        <option value='business'>Business</option>
-                        <option value='careers'>Careers</option>
-                        <option value='enquiries'>General Enquiries</option>
-                    </Select>
-                    <Textarea
-                        placeholder="Message"
-                        sx={inputStyling}
-                        width="65%"
-                    />
-                </form>
-            </Flex>
+                        Send Us a Message
+                    </Heading>
+                    <form>
+                        <Flex gap="1rem" width="65%">
+                            <Input
+                                placeholder="Full Name"
+                                type="text"
+                                sx={inputStyling}
+                            />
+                            <Input
+                                placeholder="Email"
+                                type="email"
+                                sx={inputStyling}
+                            />
+                        </Flex>
+                        <Select
+                            sx={inputStyling}
+                            placeholder="Subject"
+                            width="65%"
+                        >
+                            <option value='business'>Business</option>
+                            <option value='careers'>Careers</option>
+                            <option value='enquiries'>General Enquiries</option>
+                        </Select>
+                        <Textarea
+                            placeholder="Message"
+                            sx={inputStyling}
+                            width="65%"
+                        />
+                    </form>
+                </Flex>
         </GridItem>
         <GridItem
             marginTop="6rem"

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Flex, Image, Text } from '@chakra-ui/react'
+
 import SecondaryHeader from '../components/SecondaryHeader'
 import ServiceList from '../components/ServiceList'
 import LandscapeImageOne from '../../assets/bodyImages/DumaImage01.jpg'

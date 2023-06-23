@@ -6,7 +6,7 @@ import {FaFacebookF} from 'react-icons/fa'
 
 const Footer = () => {
 
-    let menu = ["Home", "What We Do", "The Grind", "Newsroom", "contact"];
+    let menu = ["Home", "What We Do", "The Grind", "The Buzz", "Get In Touch"];
     let socialIcons = ["AiOutlineInstagram", "AiOutlineTwitter", "FaFacebookF", "AiOutlineInstagram"]
 
   return (

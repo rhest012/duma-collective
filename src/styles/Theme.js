@@ -25,43 +25,49 @@ const theme = extendTheme ({
             fontSize: "3.05rem",
             letterSpacing: "1.5px",
             textTransform: "uppercase",
-            color: "#1E174B"
+            color: "#1E174B",
+            paddingBottom: "2rem"
           },
           h3: {
             fontWeight: 600,
             fontSize: "2.44rem",
             letterSpacing: "1.5px",
             textTransform: "uppercase",
+            color: "#1E174B"
           },
           h4: {
             fontWeight: 600,
             fontSize: "1.95rem",
             letterSpacing: "1.5px",
             marginBottom: "1rem",
+            color: "#1E174B",
+            textTransform: "uppercase",
           },
           h5: {
             fontWeight: 600,
             fontSize: "1.56rem",
             letterSpacing: "1.5px",
             textTransform: "uppercase",
+            color: "#1E174B"
             
           },
           h6: {
             fontWeight: 500,
             fontSize: "1.25rem",
             textTransform: "uppercase",
-            color: "#1E174B"
+            color: "#1E174B",
           },
           p: {
             fontSize: "1.25rem",
-            fontWeight:"regular"
+            fontWeight:"regular",
+            color: "#1E174B",
           }
         },
       },
       Image: {
         variants: {
           dumaImage: {
-            borderRadius: "2rem"
+            borderRadius: "0.5rem"
           }
         }
       }

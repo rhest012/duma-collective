@@ -59,7 +59,7 @@ const Footer = () => {
         <Box borderTop="1px solid #1E174B"/>
             <Box>
                 <Text variant="p" textAlign="center" width="100%" paddingY="1rem"> 
-                    &copy; {new Date().getFullYear()} Duma Collective. All rights reserved.
+                    &copy; {new Date().getFullYear()} Duma Collective. All rights reserved. A RHEST design
                 </Text>
             </Box>
    </Box>
